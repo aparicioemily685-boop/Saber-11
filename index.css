@@ -1,0 +1,1524 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #07111f;
+  color: white;
+  overflow-x: hidden;
+}
+
+.fondo {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -5;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 20% 20%, #183b61 0%, transparent 30%),
+    radial-gradient(circle at 80% 70%, #421d54 0%, transparent 30%),
+    #07111f;
+}
+
+.circulo {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(2px);
+  opacity: 0.35;
+}
+
+.circulo1 {
+  width: 300px;
+  height: 300px;
+  background: #00d9ff;
+  top: -100px;
+  left: -100px;
+}
+
+.circulo2 {
+  width: 400px;
+  height: 400px;
+  background: #8c00ff;
+  right: -180px;
+  top: 250px;
+}
+
+.circulo3 {
+  width: 250px;
+  height: 250px;
+  background: #ff008c;
+  bottom: -100px;
+  left: 30%;
+}
+
+/* BARRA DE NAVEGACIÓN */
+.navbar {
+  width: 100%;
+  min-height: 75px;
+  padding: 15px 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background: rgba(5, 14, 27, 0.92);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.nombre {
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
+
+.nombre span {
+  color: #00d9ff;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+nav a {
+  color: #d7e2ee;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #00d9ff;
+}
+
+/* PORTADA */
+.hero {
+  min-height: 100vh;
+  padding: 120px 10% 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.hero-text {
+  max-width: 600px;
+}
+
+.mini-titulo {
+  color: #00d9ff;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: clamp(55px, 8vw, 100px);
+  line-height: 0.9;
+  letter-spacing: -5px;
+}
+
+h1 span {
+  display: block;
+  color: transparent;
+  -webkit-text-stroke: 2px #ffffff;
+  margin-top: 10px;
+}
+
+.descripcion {
+  color: #aebdcc;
+  font-size: 18px;
+  line-height: 1.7;
+  max-width: 550px;
+  margin-top: 35px;
+}
+
+.botones {
+  display: flex;
+  gap: 15px;
+  margin-top: 35px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 15px 28px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.principal {
+  color: #06101d;
+  background: #00d9ff;
+  box-shadow: 0 0 25px rgba(0, 217, 255, 0.35);
+}
+
+.principal:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 40px rgba(0, 217, 255, 0.6);
+}
+
+.secundario {
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.secundario:hover {
+  background: white;
+  color: #07111f;
+}
+
+/* LOGO SABER 11 */
+.logo-container {
+  position: relative;
+  width: 520px;
+  height: 520px;
+  flex: 0 0 520px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  position: relative;
+  width: 430px;
+  height: 430px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 50% 40%,
+    #26384c 0%,
+    #172537 45%,
+    #0b1420 75%,
+    #050a10 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: flotar 4s ease-in-out infinite;
+  box-shadow:
+    0 0 30px rgba(0, 0, 0, 0.7),
+    inset 0 0 35px rgba(0, 0, 0, 0.8);
+}
+
+.anillo {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.anillo-externo {
+  width: 470px;
+  height: 470px;
+  border: 4px solid #d7dce1;
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.6);
+}
+
+.anillo-medio {
+  width: 500px;
+  height: 500px;
+  border: 4px solid #8a95a3;
+}
+
+.anillo-interno {
+  width: 455px;
+  height: 455px;
+  border: 4px solid #e5e8eb;
+}
+
+.logo-inner {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-saber {
+  display: block;
+  font-size: 97px;
+  line-height: 0.9;
+  font-weight: 900;
+  letter-spacing: -3px;
+  color: white;
+  text-shadow: 0 3px 2px rgba(0, 0, 0, 0.4);
+}
+
+.logo-11 {
+  display: block;
+  margin-top: 12px;
+  font-size: 105px;
+  line-height: 0.85;
+  font-weight: 900;
+  letter-spacing: -3px;
+  color: white;
+  text-shadow: 0 3px 2px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes flotar {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* SECCIONES */
+.seccion {
+  padding: 120px 10%;
+  text-align: center;
+  scroll-margin-top: 90px;
+}
+
+.seccion h2 {
+  font-size: clamp(35px, 5vw, 60px);
+  max-width: 850px;
+  margin: auto;
+  line-height: 1.05;
+}
+
+.seccion h2 span {
+  color: #00d9ff;
+}
+
+.texto-seccion {
+  max-width: 650px;
+  margin: 30px auto;
+  color: #aebdcc;
+  line-height: 1.7;
+}
+
+.nosotras {
+  background: rgba(255, 255, 255, 0.015);
+}
+
+/* BLOQUES DE INFORMACIÓN */
+.info-bloque {
+  width: 100%;
+  max-width: 1100px;
+  min-width: 0;
+  margin: 55px auto 0;
+  padding: 45px;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 25px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  scroll-margin-top: 95px;
+}
+
+.info-bloque:hover {
+  border-color: rgba(0, 217, 255, 0.5);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.info-bloque h3 {
+  font-size: 32px;
+  margin-bottom: 25px;
+  overflow-wrap: anywhere;
+}
+
+.info-bloque > p:not(.mini-titulo) {
+  color: #aebdcc;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+.destacado {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 217, 255, 0.08),
+    rgba(140, 0, 255, 0.06)
+  );
+}
+
+/* OBJETIVOS */
+.objetivos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.objetivo {
+  min-width: 0;
+  padding: 30px;
+  background: rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+}
+
+.objetivo span,
+.paso span {
+  color: #00d9ff;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.objetivo h4 {
+  font-size: 21px;
+  margin: 18px 0 12px;
+}
+
+.objetivo p {
+  color: #9eacbb;
+  line-height: 1.6;
+}
+
+/* TEMAS IMPORTANTES */
+.temas-importantes {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.temas-importantes div {
+  min-width: 0;
+  padding: 25px;
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.temas-importantes span {
+  font-size: 32px;
+}
+
+.temas-importantes h4 {
+  margin: 15px 0 10px;
+  font-size: 19px;
+}
+
+.temas-importantes p {
+  color: #9eacbb;
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+/* EVIDENCIAS: CONTENEDOR CORREGIDO */
+#evidencias {
+  width: 100%;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  scroll-margin-top: 95px;
+}
+
+.evidencias-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 22px;
+  width: 100%;
+  min-width: 0;
+  margin-top: 30px;
+}
+
+.evidencia {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-width: 0;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 18px;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.evidencia:hover {
+  border-color: #00d9ff;
+  transform: translateY(-4px);
+}
+
+.evidencia > span {
+  display: block;
+  padding: 20px 22px 0;
+  color: #00d9ff;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.evidencia h4 {
+  padding: 8px 22px 15px;
+  font-size: 21px;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+/* 
+.evidencia img,
+.imagen-evidencia {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: 280px;
+  margin: 0;
+  padding: 0;
+  object-fit: contain;
+  object-position: center;
+  background: #030811;
+  border: 0;
+}
+
+/* TEXTO DE CADA EVIDENCIA */
+.evidencia p {
+  padding: 20px 22px 24px;
+  color: #9eacbb;
+  font-size: 15px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+/* CRONOGRAMA */
+.cronograma {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.paso {
+  min-width: 0;
+  padding: 28px;
+  border-left: 3px solid #00d9ff;
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+}
+
+.paso h4 {
+  font-size: 20px;
+  margin: 15px 0 10px;
+}
+
+.paso p {
+  color: #9eacbb;
+  line-height: 1.5;
+}
+
+/* TARJETAS DEL PROYECTO */
+.cards {
+  width: 100%;
+  max-width: 1100px;
+  margin: 70px auto 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.card {
+  min-width: 0;
+  padding: 35px;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: #00d9ff;
+  background: rgba(0, 217, 255, 0.07);
+}
+
+.icono {
+  font-size: 35px;
+  margin-bottom: 20px;
+}
+
+.card h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.card p {
+  color: #9eacbb;
+  line-height: 1.6;
+}
+
+/* ÁREAS DE ESTUDIO */
+.temas {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.temas-grid {
+  width: 100%;
+  max-width: 1100px;
+  margin: 70px auto 0;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.tema {
+  min-width: 0;
+  padding: 25px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  text-align: left;
+  background: rgba(0, 0, 0, 0.15);
+  transition: 0.3s;
+}
+
+.tema:hover {
+  transform: translateY(-3px);
+  border-color: #8c00ff;
+}
+
+.tema span {
+  color: #00d9ff;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.tema h3 {
+  margin: 20px 0 10px;
+  font-size: 18px;
+}
+
+.tema p {
+  color: #9eacbb;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* FRASE FINAL */
+.frase {
+  padding: 120px 10%;
+  text-align: center;
+}
+
+.frase h2 {
+  font-size: clamp(30px, 5vw, 60px);
+  max-width: 900px;
+  margin: 35px auto;
+  line-height: 1.2;
+}
+
+.frase span {
+  color: #00d9ff;
+}
+
+.linea {
+  height: 1px;
+  max-width: 500px;
+  margin: auto;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #00d9ff,
+    transparent
+  );
+}
+
+/* PIE DE PÁGINA */
+footer {
+  padding: 40px 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: #040a12;
+}
+
+footer strong {
+  letter-spacing: 2px;
+}
+
+footer p {
+  color: #778697;
+  margin-top: 8px;
+  line-height: 1.5;
+}
+
+.footer-derecha {
+  text-align: right;
+}
+
+/* TABLET */
+@media (max-width: 1100px) {
+  .hero {
+    gap: 20px;
+    padding-left: 7%;
+    padding-right: 7%;
+  }
+
+  .logo-container {
+    transform: scale(0.8);
+    margin: -45px;
+  }
+
+  .temas-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .temas-importantes {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .navbar {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  nav {
+    gap: 14px;
+  }
+}
+
+/* CELULARES Y PANTALLAS PEQUEÑAS */
+@media (max-width: 850px) {
+  .navbar {
+    min-height: 70px;
+    padding: 12px 5%;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .hero {
+    padding: 120px 7% 60px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .descripcion {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .botones {
+    justify-content: center;
+  }
+
+  .logo-container {
+    width: 400px;
+    height: 400px;
+    flex: 0 0 400px;
+    transform: scale(0.72);
+    margin: -35px 0;
+  }
+
+  .cards,
+  .temas-grid,
+  .objetivos-grid,
+  .temas-importantes,
+  .cronograma,
+  .evidencias-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .tema {
+    text-align: center;
+  }
+
+  .info-bloque {
+    padding: 30px 20px;
+  }
+
+  .seccion {
+    padding: 95px 7%;
+  }
+
+  .evidencia img,
+  .imagen-evidencia {
+    height: auto;
+    max-height: 420px;
+    min-height: 180px;
+    object-fit: contain;
+  }
+
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-derecha {
+    text-align: center;
+  }
+}
+
+/* CELULARES MUY PEQUEÑOS */
+@media (max-width: 480px) {
+  .nombre {
+    font-size: 17px;
+  }
+
+  h1 {
+    font-size: clamp(45px, 13vw, 65px);
+    letter-spacing: -3px;
+  }
+
+  .descripcion {
+    font-size: 16px;
+  }
+
+  .btn {
+    padding: 13px 20px;
+  }
+
+  .logo-container {
+    transform: scale(0.58);
+    margin: -75px 0;
+  }
+
+  .info-bloque h3 {
+    font-size: 26px;
+  }
+
+  .evidencia img,
+  .imagen-evidencia {
+    max-height: 300px;
+    min-height: 150px;
+  }
+
+  .evidencia h4 {
+    font-size: 19px;
+  }
+
+  .evidencia p {
+    font-size: 14px;
+  }
+
+  .frase {
+    padding: 80px 7%;
+  }
+}
+/* ================================================= */
+/* ESTILOS DEL NUEVO BANNER CON IMAGEN Y TEXTO       */
+/* ================================================= */
+.banner-saber11 {
+  min-height: 100vh;
+  padding: 130px 10% 60px; /* Margen superior para que no choque con el menú fijo */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  scroll-margin-top: 80px;
+}
+
+.banner-contenido {
+  max-width: 580px;
+}
+
+.banner-etiqueta {
+  color: #00d9ff;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.banner-saber11 h2 {
+  font-size: clamp(45px, 6vw, 75px);
+  line-height: 0.95;
+  letter-spacing: -3px;
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+
+.banner-saber11 h2 span {
+  display: block;
+  color: transparent;
+  -webkit-text-stroke: 2px #ffffff;
+  margin-top: 10px;
+}
+
+.banner-contenido p {
+  color: #aebdcc;
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 35px;
+}
+
+.banner-boton {
+  display: inline-block;
+  padding: 15px 28px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #06101d;
+  background: #00d9ff;
+  box-shadow: 0 0 25px rgba(0, 217, 255, 0.35);
+  transition: 0.3s;
+}
+
+.banner-boton:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 40px rgba(0, 217, 255, 0.6);
+}
+
+.banner-imagen-container {
+  width: 480px;
+  height: 480px;
+  flex: 0 0 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.banner-imagen {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 30px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Ajustes responsivos para tablets y móviles */
+@media (max-width: 1100px) {
+  .banner-saber11 {
+    padding-left: 7%;
+    padding-right: 7%;
+  }
+  .banner-imagen-container {
+    width: 400px;
+    height: 400px;
+    flex: 0 0 400px;
+  }
+}
+
+@media (max-width: 850px) {
+  .banner-saber11 {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 120px;
+  }
+  .banner-contenido {
+    max-width: 100%;
+  }
+  .banner-imagen-container {
+    width: 100%;
+    max-width: 400px;
+    height: 350px;
+    flex: none;
+  }
+  .banner-contenido p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+/* ================================================= */
+/* ESTILOS DEL BANNER INDEPENDIENTE (EXTREMO A EXTREMO) */
+/* ================================================= */
+
+.banner-saber11 {
+  position: relative;
+  width: 100%;
+  min-height: 80vh; /* Altura del banner ajustada */
+  margin-top: 75px; /* Compensa la barra de navegación fija */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 60px 10%;
+  overflow: hidden;
+}
+
+/* Imagen de fondo abarcando de extremo a extremo */
+.banner-fondo-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+}
+
+/* Sombra / Degradado sobre la imagen para legibilidad del texto */
+.banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg, 
+    rgba(7, 17, 31, 0.95) 0%, 
+    rgba(7, 17, 31, 0.75) 50%, 
+    rgba(7, 17, 31, 0.4) 100%
+  );
+  z-index: 2;
+}
+
+/* Contenido del texto e interacción */
+.banner-contenido {
+  position: relative;
+  z-index: 3;
+  max-width: 600px;
+}
+
+.banner-etiqueta {
+  color: #00d9ff;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 4px;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.banner-saber11 h2 {
+  font-size: clamp(40px, 6vw, 70px);
+  line-height: 0.95;
+  letter-spacing: -2px;
+  font-weight: 900;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.banner-saber11 h2 span {
+  display: block;
+  color: transparent;
+  -webkit-text-stroke: 2px #ffffff;
+  margin-top: 8px;
+}
+
+.banner-contenido p {
+  color: #d7e2ee;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.banner-boton {
+  display: inline-block;
+  padding: 15px 32px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #06101d;
+  background: #00d9ff;
+  box-shadow: 0 0 25px rgba(0, 217, 255, 0.4);
+  transition: all 0.3s ease;
+}
+
+.banner-boton:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 40px rgba(0, 217, 255, 0.7);
+  background: #ffffff;
+}
+
+/* Responsivo para móviles y pantallas pequeñas */
+@media (max-width: 850px) {
+  .banner-saber11 {
+    min-height: 70vh;
+    padding: 60px 7%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .banner-overlay {
+    background: rgba(7, 17, 31, 0.85); /* Fondo parejo en móviles */
+  }
+
+  .banner-contenido {
+    max-width: 100%;
+  }
+
+  .banner-contenido p {
+    font-size: 16px;
+  }
+}
+/* ================================================= */
+/* ESTILOS DEL BANNER INDEPENDIENTE (EXTREMO A EXTREMO) */
+/* ================================================= */
+
+.banner-saber11 {
+  position: relative;
+  width: 100%;
+  min-height: 80vh; /* Altura del banner ajustada */
+  margin-top: 75px; /* Compensa la barra de navegación fija */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 60px 10%;
+  overflow: hidden;
+}
+
+/* Imagen de fondo abarcando de extremo a extremo */
+.banner-fondo-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+}
+
+/* Sombra / Degradado sobre la imagen para legibilidad del texto */
+.banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg, 
+    rgba(7, 17, 31, 0.95) 0%, 
+    rgba(7, 17, 31, 0.75) 50%, 
+    rgba(7, 17, 31, 0.4) 100%
+  );
+  z-index: 2;
+}
+
+/* Contenido del texto e interacción */
+.banner-contenido {
+  position: relative;
+  z-index: 3;
+  max-width: 600px;
+}
+
+.banner-etiqueta {
+  color: #00d9ff;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 4px;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.banner-saber11 h2 {
+  font-size: clamp(40px, 6vw, 70px);
+  line-height: 0.95;
+  letter-spacing: -2px;
+  font-weight: 900;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.banner-saber11 h2 span {
+  display: block;
+  color: transparent;
+  -webkit-text-stroke: 2px #ffffff;
+  margin-top: 8px;
+}
+
+.banner-contenido p {
+  color: #d7e2ee;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.banner-boton {
+  display: inline-block;
+  padding: 15px 32px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #06101d;
+  background: #00d9ff;
+  box-shadow: 0 0 25px rgba(0, 217, 255, 0.4);
+  transition: all 0.3s ease;
+}
+
+.banner-boton:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 40px rgba(0, 217, 255, 0.7);
+  background: #ffffff;
+}
+
+/* Responsivo para móviles y pantallas pequeñas */
+@media (max-width: 850px) {
+  .banner-saber11 {
+    min-height: 70vh;
+    padding: 60px 7%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .banner-overlay {
+    background: rgba(7, 17, 31, 0.85); /* Fondo parejo en móviles */
+  }
+
+  .banner-contenido {
+    max-width: 100%;
+  }
+
+  .banner-contenido p {
+    font-size: 16px;
+  }
+}/* ================================================= */
+/* ESTILOS DEL BANNER INDEPENDIENTE (EXTREMO A EXTREMO) */
+/* ================================================= */
+
+.banner-saber11 {
+  position: relative;
+  width: 100%;
+  min-height: 80vh; /* Altura del banner ajustada */
+  margin-top: 75px; /* Compensa la barra de navegación fija */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 60px 10%;
+  overflow: hidden;
+}
+
+/* Imagen de fondo abarcando de extremo a extremo */
+.banner-fondo-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+}
+
+/* Sombra / Degradado sobre la imagen para legibilidad del texto */
+.banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg, 
+    rgba(7, 17, 31, 0.95) 0%, 
+    rgba(7, 17, 31, 0.75) 50%, 
+    rgba(7, 17, 31, 0.4) 100%
+  );
+  z-index: 2;
+}
+
+/* Contenido del texto e interacción */
+.banner-contenido {
+  position: relative;
+  z-index: 3;
+  max-width: 600px;
+}
+
+.banner-etiqueta {
+  color: #00d9ff;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 4px;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.banner-saber11 h2 {
+  font-size: clamp(40px, 6vw, 70px);
+  line-height: 0.95;
+  letter-spacing: -2px;
+  font-weight: 900;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.banner-saber11 h2 span {
+  display: block;
+  color: transparent;
+  -webkit-text-stroke: 2px #ffffff;
+  margin-top: 8px;
+}
+
+.banner-contenido p {
+  color: #d7e2ee;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.banner-boton {
+  display: inline-block;
+  padding: 15px 32px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #06101d;
+  background: #00d9ff;
+  box-shadow: 0 0 25px rgba(0, 217, 255, 0.4);
+  transition: all 0.3s ease;
+}
+
+.banner-boton:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 40px rgba(0, 217, 255, 0.7);
+  background: #ffffff;
+}
+
+/* Responsivo para móviles y pantallas pequeñas */
+@media (max-width: 850px) {
+  .banner-saber11 {
+    min-height: 70vh;
+    padding: 60px 7%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .banner-overlay {
+    background: rgba(7, 17, 31, 0.85); /* Fondo parejo en móviles */
+  }
+
+  .banner-contenido {
+    max-width: 100%;
+  }
+
+  .banner-contenido p {
+    font-size: 16px;
+  }
+}
+/* ================================================= */
+/* ESTILOS DEL BANNER INDEPENDIENTE (EXTREMO A EXTREMO) */
+/* ================================================= */
+
+.banner-saber11 {
+  position: relative;
+  width: 100%;
+  min-height: 80vh; /* Altura del banner ajustada */
+  margin-top: 75px; /* Compensa la barra de navegación fija */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 60px 10%;
+  overflow: hidden;
+}
+
+/* Imagen de fondo abarcando de extremo a extremo */
+.banner-fondo-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+}
+
+/* Sombra / Degradado sobre la imagen para legibilidad del texto */
+.banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg, 
+    rgba(7, 17, 31, 0.95) 0%, 
+    rgba(7, 17, 31, 0.75) 50%, 
+    rgba(7, 17, 31, 0.4) 100%
+  );
+  z-index: 2;
+}
+
+/* Contenido del texto e interacción */
+.banner-contenido {
+  position: relative;
+  z-index: 3;
+  max-width: 600px;
+}
+
+.banner-etiqueta {
+  color: #00d9ff;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 4px;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.banner-saber11 h2 {
+  font-size: clamp(40px, 6vw, 70px);
+  line-height: 0.95;
+  letter-spacing: -2px;
+  font-weight: 900;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.banner-saber11 h2 span {
+  display: block;
+  color: transparent;
+  -webkit-text-stroke: 2px #ffffff;
+  margin-top: 8px;
+}
+
+.banner-contenido p {
+  color: #d7e2ee;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.banner-boton {
+  display: inline-block;
+  padding: 15px 32px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #06101d;
+  background: #00d9ff;
+  box-shadow: 0 0 25px rgba(0, 217, 255, 0.4);
+  transition: all 0.3s ease;
+}
+
+.banner-boton:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 40px rgba(0, 217, 255, 0.7);
+  background: #ffffff;
+}
+
+/* Responsivo para móviles y pantallas pequeñas */
+@media (max-width: 850px) {
+  .banner-saber11 {
+    min-height: 70vh;
+    padding: 60px 7%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .banner-overlay {
+    background: rgba(7, 17, 31, 0.85); /* Fondo parejo en móviles */
+  }
+
+  .banner-contenido {
+    max-width: 100%;
+  }
+
+  .banner-contenido p {
+    font-size: 16px;
+  }
+}
+/* ================================================= */
+/* ESTILOS DEL BANNER INDEPENDIENTE (EXTREMO A EXTREMO) */
+/* ================================================= */
+
+.banner-saber11 {
+  position: relative;
+  width: 100%;
+  min-height: 80vh; /* Altura del banner ajustada */
+  margin-top: 75px; /* Compensa la barra de navegación fija */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 60px 10%;
+  overflow: hidden;
+}
+
+/* Imagen de fondo abarcando de extremo a extremo */
+.banner-fondo-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+}
+
+/* Sombra / Degradado sobre la imagen para legibilidad del texto */
+.banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg, 
+    rgba(7, 17, 31, 0.95) 0%, 
+    rgba(7, 17, 31, 0.75) 50%, 
+    rgba(7, 17, 31, 0.4) 100%
+  );
+  z-index: 2;
+}
+
+/* Contenido del texto e interacción */
+.banner-contenido {
+  position: relative;
+  z-index: 3;
+  max-width: 600px;
+}
+
+.banner-etiqueta {
+  color: #00d9ff;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 4px;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.banner-saber11 h2 {
+  font-size: clamp(40px, 6vw, 70px);
+  line-height: 0.95;
+  letter-spacing: -2px;
+  font-weight: 900;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.banner-saber11 h2 span {
+  display: block;
+  color: transparent;
+  -webkit-text-stroke: 2px #ffffff;
+  margin-top: 8px;
+}
+
+.banner-contenido p {
+  color: #d7e2ee;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.banner-boton {
+  display: inline-block;
+  padding: 15px 32px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #06101d;
+  background: #00d9ff;
+  box-shadow: 0 0 25px rgba(0, 217, 255, 0.4);
+  transition: all 0.3s ease;
+}
+
+.banner-boton:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 40px rgba(0, 217, 255, 0.7);
+  background: #ffffff;
+}
+
+/* Responsivo para móviles y pantallas pequeñas */
+@media (max-width: 850px) {
+  .banner-saber11 {
+    min-height: 70vh;
+    padding: 60px 7%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .banner-overlay {
+    background: rgba(7, 17, 31, 0.85); /* Fondo parejo en móviles */
+  }
+
+  .banner-contenido {
+    max-width: 100%;
+  }
+
+  .banner-contenido p {
+    font-size: 16px;
+  }
+}
